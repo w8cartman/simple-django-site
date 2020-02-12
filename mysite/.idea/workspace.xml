@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b2e5e3d-696e-4cc8-b547-248dbd79803b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
     </list>
@@ -42,8 +41,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="last_opened_file_path" value="$USER_HOME$/django-mysite" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -92,6 +91,7 @@
       <workItem from="1581098900024" duration="4206000" />
       <workItem from="1581247790447" duration="1285000" />
       <workItem from="1581271142126" duration="1758000" />
+      <workItem from="1581438928259" duration="2658000" />
     </task>
     <servers />
   </component>
@@ -99,14 +99,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="873" y="281" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581439001046">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="873" y="281" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1581439001046" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1581249141892">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/0.27.1920.988@0.27.1920.988" timestamp="1581249141892" />
-    <state x="584" y="158" key="SettingsEditor" timestamp="1580932118821">
+    <state x="264" y="168" key="SettingsEditor" timestamp="1581439853006">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="584" y="158" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1580932118821" />
+    <state x="264" y="168" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1581439853006" />
     <state x="908" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1580932047783">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
