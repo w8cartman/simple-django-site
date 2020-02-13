@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b2e5e3d-696e-4cc8-b547-248dbd79803b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mysite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mysite.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/static/mainApp/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/static/mainApp/image/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +98,9 @@
       <workItem from="1581247790447" duration="1285000" />
       <workItem from="1581271142126" duration="1758000" />
       <workItem from="1581438928259" duration="2658000" />
+      <workItem from="1581525257978" duration="664000" />
+      <workItem from="1581606817717" duration="1612000" />
+      <workItem from="1581608730541" duration="1618000" />
     </task>
     <servers />
   </component>
@@ -107,10 +116,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/0.27.1920.988@0.27.1920.988" timestamp="1581249141892" />
-    <state x="264" y="168" key="SettingsEditor" timestamp="1581439853006">
+    <state x="264" y="168" key="SettingsEditor" timestamp="1581609685963">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="264" y="168" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1581439853006" />
+    <state x="264" y="168" key="SettingsEditor/0.27.1920.988@0.27.1920.988" timestamp="1581609685963" />
     <state x="908" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1580932047783">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
