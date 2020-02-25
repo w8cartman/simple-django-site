@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b2e5e3d-696e-4cc8-b547-248dbd79803b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mysite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mysite.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/static/mainApp/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainApp/static/mainApp/image/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/templates/mainApp/homePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/mainApp/homePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainApp/templates/mainApp/includes/some_html.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainApp/templates/mainApp/includes/some_html.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +99,9 @@
       <workItem from="1581525257978" duration="664000" />
       <workItem from="1581606817717" duration="1612000" />
       <workItem from="1581608730541" duration="1618000" />
+      <workItem from="1581939215796" duration="4065000" />
+      <workItem from="1582300551907" duration="599000" />
+      <workItem from="1582641083321" duration="5046000" />
     </task>
     <servers />
   </component>
@@ -124,6 +125,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="908" y="350" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1580932047783" />
+    <state x="1202" y="212" width="580" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582650000293">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="1202" y="212" width="580" height="616" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.988@0.27.1920.988" timestamp="1582650000293" />
     <state x="753" y="268" key="search.everywhere.popup" timestamp="1580931503355">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
