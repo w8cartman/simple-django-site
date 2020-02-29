@@ -1,18 +1,27 @@
 pipeline {
+
     agent any
+
     stages {
         stage('Build') {
+	    agent {lame1 Slave1}
             steps {
+		sh "pip install -r mysite/requirements.txt"
                 echo 'Building..'
             }
         }
+
         stage('Test') {
             steps {
+	    agent {lame1 Slave1}
+		sh "python3 mysite/manage.py"
                 echo 'Testing..'
             }
         }
+
         stage('Deploy') {
             steps {
+		sh "python3 manage.py runserver &"
                 echo 'Deploying....'
             }
         }
