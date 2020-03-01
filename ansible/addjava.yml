@@ -1,0 +1,12 @@
+---
+- name: Install Java 8
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Update
+    apt: update_cache=yes upgrade=yes
+
+  - name: Install openjdk-8-jre
+    apt: name=openjdk-8-jre state=latest

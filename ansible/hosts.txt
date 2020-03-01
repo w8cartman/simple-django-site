@@ -1,0 +1,5 @@
+[staging]
+linux1	ansible_host=172.31.34.184 ansible_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/.ssh/slave1key.pem
+
+[same_cred:children]
+staging
