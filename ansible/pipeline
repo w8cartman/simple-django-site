@@ -1,0 +1,31 @@
+pipeline {
+   
+   agent none
+   
+   stages {
+      stage('Add Java') {
+         agent { label 'master' }
+         steps {
+            sh "ansible-playbook ansible/addjava.yml"
+         }
+      }
+      stage('Install Docker') {
+         agent { label 'master' }
+         steps {       
+            sh "ansible-playbook ansible/add_docker.yml"
+         }
+      }
+   }
+   post {
+      success {
+        node('master') {
+           build job: 'Opsworks', wait: false
+        }
+      }
+      failure {
+        node('master') {
+           telegramSend "Job \"${JOB_NAME}\": Build №${BUILD_NUMBER} Failed. More info: ${BUILD_URL}"
+         }
+      }
+   }
+}
