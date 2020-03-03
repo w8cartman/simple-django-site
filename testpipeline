@@ -1,29 +1,44 @@
 pipeline {
 
-    agent any
+    agent none
 
     stages {
         stage('Build') {
-	    agent {lame1 Slave1}
+	    agent {label 'Slave1'}
             steps {
-		sh "pip install -r mysite/requirements.txt"
+		sh "pip install --upgrade -r mysite/requirements.txt"
                 echo 'Building..'
             }
         }
 
         stage('Test') {
             steps {
-	    agent {lame1 Slave1}
-		sh "python3 mysite/manage.py"
+	    agent {label 'Slave1'}
+		sh "python3 mysite/manage.py test mainApp"
                 echo 'Testing..'
             }
         }
 
-        stage('Deploy') {
+        stage('Staging') {
+	    agent {label 'Slave2'}
             steps {
+		echo "Deploying"
 		sh "python3 manage.py runserver &"
-                echo 'Deploying....'
             }
         }
     }
+
+
+post {
+      success {
+        node('master') {
+           telegramSend "Job \"${JOB_NAME}\": Build №${BUILD_NUMBER} Succeed. More info: ${BUILD_URL}"
+         }
+      }
+      failure {
+        node('master') {
+           telegramSend "Job \"${JOB_NAME}\": Build №${BUILD_NUMBER} Failed. More info: ${BUILD_URL}"
+         }
+      }
+   }
 }
