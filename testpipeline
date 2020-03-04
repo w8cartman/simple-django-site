@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
 	    agent { label 'Slave1' }
             steps {
-		sh "python3 manage.py migrate"
+		sh "python3 mysite/manage.py migrate"
 		sh "pip3 install -r mysite/requirements.txt"
                 echo 'Building..'
             }
@@ -25,7 +25,7 @@ pipeline {
             steps {
 		echo "Deploying"
 		sh "pip3 install -r mysite/requirements.txt"
-		sh "python3 manage.py runserver &"
+		sh "python3 mysite/manage.py runserver &"
             }
         }
     }
