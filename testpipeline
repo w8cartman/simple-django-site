@@ -25,7 +25,10 @@ pipeline {
             steps {
 		echo "Deploying"
 		sh "pip3 install -r mysite/requirements.txt"
-		sh "nohup python3 mysite/manage.py runserver 0.0.0.0:8000 &"
+		sh "python3 mysite/manage.py migrate"
+		withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+			sh "nohup python3 mysite/manage.py runserver 0.0.0.0:8000 &"
+		}
             }
         }
     }
