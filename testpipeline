@@ -15,7 +15,7 @@ pipeline {
         stage('Test') {
 	    agent { label 'Slave1' }
 	    steps {
-		sh "python3 manage.py test mainApp"
+		sh "python3 mysite/manage.py test mainApp"
                 echo 'Testing..'
             }
         }
