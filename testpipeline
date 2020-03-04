@@ -4,23 +4,24 @@ pipeline {
 
     stages {
         stage('Build') {
-	    agent {label 'Slave1'}
+	    agent { label 'Slave1' }
             steps {
+		sh "sudo python3 manage.py migrate"
 		sh "pip3 install --upgrade -r mysite/requirements.txt"
                 echo 'Building..'
             }
         }
 
         stage('Test') {
-            steps {
-	    agent {label 'Slave1'}
-		sh "python3 mysite/manage.py test mainApp"
+	    agent { label 'Slave1' }
+	    steps {
+		sh "python3 manage.py test mainApp"
                 echo 'Testing..'
             }
         }
 
         stage('Staging') {
-	    agent {label 'Slave2'}
+	    agent { label 'Slave2' }
             steps {
 		echo "Deploying"
 		sh "python3 manage.py runserver &"
