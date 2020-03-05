@@ -5,8 +5,8 @@ WORKDIR /code
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-COPY ./requirements.txt /code/
-COPY ./ /code/
+COPY mysite/requirements.txt /code/
+COPY mysite/ /code/
 RUN chmod +x /code/django-start
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt

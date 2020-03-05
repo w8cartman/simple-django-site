@@ -6,16 +6,21 @@ pipeline {
         stage('Build') {
 	    agent { label 'Slave1' }
             steps {
-		sh "pip3 install -r mysite/requirements.txt"
-		sh "python3 mysite/manage.py migrate"
+		sh "ln ./mysite/credstoenv/test.sh mysite/django-start"
+		sh "docker build . -t django"
                 echo 'Building..'
             }
         }
 
         stage('Test') {
 	    agent { label 'Slave1' }
+	    environment {
+                ERROR_FILE = 'web/failed.err'
+            }
 	    steps {
-		sh "python3 mysite/manage.py test mainApp"
+		sh "docker stop django_container || true && docker rm django_container || true"
+		sh "docker run --name django_container django"
+                sh "if [ -f $ERROR_FILE ]; then exit 1; fi"
                 echo 'Testing..'
             }
         }
@@ -24,26 +29,25 @@ pipeline {
 	    agent { label 'Slave2' }
             steps {
 		echo "Deploying"
-		sh "pip3 install -r mysite/requirements.txt"
-		sh "python3 mysite/manage.py migrate"
-		withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
-			sh "nohup python3 mysite/manage.py runserver 0.0.0.0:8000 &"
+		sh "ln ./mysite/credstoenv/runserver.sh mysite/django-start"
+		sh "docker build . -t django"
+		sh "docker stop django_container || true && docker rm django_container || true"
+		sh "docker run --rm --name django_container -d -p 8000:8000 django"
 		}
             }
         }
-    }
 
 
-post {
-      success {
-        node('master') {
-           telegramSend "Job \"${JOB_NAME}\": Build №${BUILD_NUMBER} Succeed. More info: ${BUILD_URL}"
-         }
-      }
-      failure {
-        node('master') {
-           telegramSend "Job \"${JOB_NAME}\": Build №${BUILD_NUMBER} Failed. More info: ${BUILD_URL}"
-         }
-      }
-   }
+	post {
+	      success {
+		node('master') {
+		   telegramSend "Job \"${JOB_NAME}\": Build №${BUILD_NUMBER} Succeed. More info: ${BUILD_URL}"
+		 }
+	      }
+	      failure {
+		node('master') {
+		   telegramSend "Job \"${JOB_NAME}\": Build №${BUILD_NUMBER} Failed. More info: ${BUILD_URL}"
+		 }
+	      }
+	   }
 }
