@@ -1,0 +1,10 @@
+#!/bin/bash
+
+tags=$(docker images | grep django_start | awk '{print $2}')
+                for tag in $tags
+                do
+                    if [ $tag != "latest" ] && [ "$tag" -lt "$((${BUILD_NUMBER}-1))" ]
+                    then
+                        docker rmi $(docker images | grep django_start | grep $tag | awk '{print $1}'):$tag || true
+                    fi
+                done
