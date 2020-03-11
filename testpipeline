@@ -6,9 +6,8 @@ pipeline {
         stage('Build') {
 	    agent { label 'Slave1' }
             steps {
-		sh "./dockertag"
 		sh "ln ./mysite/credstoenv/test.sh mysite/django-start"
-		sh "docker build . django:$tag"
+		sh "./dockertag"
                 echo 'Building..'
             }
         }
@@ -30,9 +29,8 @@ pipeline {
 	    agent { label 'Slave2' }
             steps {
 		echo "Deploying"
-		sh "./dockertag"
 		sh "ln ./mysite/credstoenv/runserver.sh mysite/django-start"
-		sh "docker build . django:$tag"
+		sh "./dockertag"
 		sh "docker stop django_container || true && docker rm django_container || true"
 		sh "docker run --rm --name django_container -d -p 8000:8000 django"
 		}

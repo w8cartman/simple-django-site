@@ -8,3 +8,5 @@ tags=$(docker images | grep django_start | awk '{print $2}')
                         docker rmi $(docker images | grep django_start | grep $tag | awk '{print $1}'):$tag || true
                     fi
                 done
+
+docker build . -t django:${BUILD_NUMBER}
