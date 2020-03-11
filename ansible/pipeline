@@ -19,7 +19,7 @@ pipeline {
    post {
       success {
         node('master') {
-           build job: 'Opsworks', wait: false
+           build job: 'Django_start', wait: false
         }
       }
       failure {
