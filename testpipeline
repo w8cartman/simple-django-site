@@ -32,7 +32,7 @@ pipeline {
 		sh "ln ./mysite/credstoenv/runserver.sh mysite/django-start"
 		sh "./dockertag"
 		sh "docker stop django_container || true && docker rm django_container || true"
-		sh "docker run --rm --name django_container -d -p 8000:8000 django"
+		sh "docker run --rm --name django_container -d -p 8000:8000 django:71"
 		}
             }
         }
